@@ -1,0 +1,3 @@
+/vagrant/hadoop-mapreduce-examples/src/main/java/gr/aueb/panagiotisl/wordcount/AnalyticsLauncher.java
+/vagrant/hadoop-mapreduce-examples/src/main/java/gr/aueb/panagiotisl/wordcount/MetricsMapper.java
+/vagrant/hadoop-mapreduce-examples/src/main/java/gr/aueb/panagiotisl/wordcount/MetricsReducer.java
