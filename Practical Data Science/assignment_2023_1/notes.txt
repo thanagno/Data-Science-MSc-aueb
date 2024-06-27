@@ -1,0 +1,21 @@
+
+dt = pd.read_csv('data.csv')
+dt.shape
+dt.head(10) shows first 10 lines
+dt[:10]
+dt.tail(10) last 10 ...
+dt[-10:]
+dt.describe() basic stat
+dt.columns get all the columns
+trips.pickup_longitude or trips['pickup_latitude']
+trips['trip_distance'].value_counts()[:10] value_counts() counts each discrete value in descending order
+trips['trip_distance'].value_counts().iloc[:10] slicing! up to 10 rows
+grouped = df.groupby('key1')
+
+for name, group in grouped:
+    print(name)
+    print(group)
+
+grouped[['total_bill', 'tip', 'size', 'tip_pct']].agg(['mean', 'std'])
+cal_housing['totalRooms'].isna()   chk if there are missing data
+
