@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/LSDM/project-1/map-reduce/docker-hadoop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Large Scale Data Management/project-1/map-reduce/docker-hadoop" vcs="Git" />
   </component>
 </project>
