@@ -1,0 +1,51 @@
+cqlsh> 
+
+CREATE KEYSPACE spotify WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
+
+USE spotify;	
+
+#name was used as a partition key, time was used as clustering key
+CREATE TABLE IF NOT EXISTS song_records (
+    name TEXT,
+    time TIMESTAMP,
+    song_name TEXT,
+    artists TEXT,
+    duration_ms BIGINT,
+    album_name TEXT,
+    album_release_date DATE,
+    danceability FLOAT,
+    energy FLOAT,
+    key INT,
+    loudness FLOAT,
+    mode INT,
+    speechiness FLOAT,
+    acousticness FLOAT,
+    instrumentalness FLOAT,
+    liveness FLOAT,
+    valence FLOAT,
+    tempo FLOAT,
+    PRIMARY KEY ((name), time)
+);
+
+SELECT * FROM song_records WHERE name = 'Theodoros Anagnos' LIMIT 50;
+
+'''
+This query filters the records by my username and the specified time range, then calculates the 
+average danceability value for these records.
+'''
+SELECT song_name
+FROM song_records
+WHERE name = 'Theodoros Anagnos'
+  AND time >= '2024-04-01 06:00:00'
+  AND time < '2024-04-01 06:20:00';
+
+'''
+This query selects the song_name for all records that match my username and fall within the specified hour.
+'''
+SELECT AVG(danceability) AS avg_danceability
+FROM song_records
+WHERE name = 'Theodoros Anagnos'
+  AND time >= '2024-04-01 06:00:00'
+  AND time < '2024-04-01 06:20:00';
+  
+docker start vagrant_kafka_1 vagrant_zookeeper_1 cassandra
